@@ -62,7 +62,7 @@ defmodule Nosedrum.Storage.Dispatcher do
         |> unwrap_key()
       end
 
-    GenServer.call(id, {:add, payload, command_name, command, scope})
+    GenServer.call(id, {:add, payload, command_name, command, scope}, 60_000)
   end
 
   @impl true
